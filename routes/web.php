@@ -68,7 +68,7 @@ Route::put('/admin/posts/{id}/edit', function(Request $request, $id){
         'date' => $request->date
     ]);
 
-    return redirect('/admin/posts');
+    return redirect('/admin/posts/' . $post->id . '/edit');
 });
 
 

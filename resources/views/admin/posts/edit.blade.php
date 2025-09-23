@@ -10,17 +10,17 @@
 
 <div>
     <label for="subtitle">SubTítulo</label>
-    <input name="subtitle" id="subtitle" value = {{ $post->subtitle }}>
+    <input name="subtitle" id="subtitle" value = "{{ $post->subtitle }}">
 </div>
 
 <div>
-    <label for="description">Descrição</label>
-    <textarea name="description" id="description" cols="30" rows="10" value={{ $post->description }}></textarea>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10">{{ $post->description }}</textarea>
 </div>
 
 <div>
     <label for="date">Data</label>
-    <input type="date" name="date" id="date" value = {{ $post->date }}>
+    <input type="date" name="date" id="date" value = "{{ $post->date }}">
 </div>
 
 <button type="submit">Atualizar</button>
