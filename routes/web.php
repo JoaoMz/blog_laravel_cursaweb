@@ -16,7 +16,10 @@ Route::get('/login', function(){
 
 #Rota Posts
 Route::get('/admin/posts', function(){
-    return view('admin.posts.index');
+
+    $posts = Post::orderBy('date')->get();
+
+    return view('admin.posts.index', compact('posts'));
 });
 
 
@@ -72,12 +75,35 @@ Route::put('/admin/posts/{id}/edit', function(Request $request, $id){
 });
 
 
+Route::delete('/admin/posts/{id}/delete', function($id){
+    $post = Post::find($id);
+
+    if (!$post = Post::find($id)) {
+        return redirect('/admin/posts');
+    }
+
+    $post->delete();
+
+    return redirect('/admin/posts/');
+});
+
+
 #Rota index geral
 Route::get('/blog', function(){
-    return view('web.blog.index');
+
+    $posts = Post::all();
+
+    return view('web.blog.index', compact('posts'));
 });
 
 #Rota listagem com id
 Route::get('/blog/{id}', function($id){
-    return view('web.blog.show');
+
+    $post = Post::find($id);
+
+    if (!$post = Post::find($id)) {
+        return redirect('/blog');
+    }
+
+    return view('web.blog.show', compact('post'));
 });

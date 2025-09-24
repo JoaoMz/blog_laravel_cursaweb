@@ -26,3 +26,5 @@
 <button type="submit">Atualizar</button>
 
 </form>
+
+<a href="/admin/posts">Voltar</a>
