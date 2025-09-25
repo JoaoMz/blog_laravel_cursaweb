@@ -10,6 +10,7 @@
     <tbody>
         @foreach ($posts as $post)
             <tr>
+                
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->subtitle }}</td>
                 <td>{{ date('d/m/Y', strtotime($post->date)) }}</td>
